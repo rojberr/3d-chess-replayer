@@ -33,31 +33,41 @@ Place, Fifth Floor, Boston, MA  02110 - 1301  USA
 #include "myCube.h"
 #include "myTeapot.h"
 
+#include "loadobj.h"
+
 float speed_x=0;
 float speed_y=0;
 float aspectRatio=1;
 
 ShaderProgram *sp;
 
+std::vector<glm::vec3> vertices;
+std::vector<glm::vec2> uvs;
+std::vector<glm::vec3> normals;
 
-//Odkomentuj, żeby rysować kostkę
-float* vertices = myCubeVertices;
-float* normals = myCubeNormals;
-float* texCoords = myCubeTexCoords;
-float* colors = myCubeColors;
-int vertexCount = myCubeVertexCount;
+unsigned int tex;
+
+unsigned int readTexture(const char* filename) {
+	unsigned int tex;
+	glActiveTexture(GL_TEXTURE0);
+
+	
+	std::vector<unsigned char> image;
+	unsigned width, height;
+	unsigned error = lodepng::decode(image, width, height, filename);
+
+	glGenTextures(1, &tex);
+	glBindTexture(GL_TEXTURE_2D, tex);
+	glTexImage2D(GL_TEXTURE_2D, 0, 4, width, height, 0,
+		GL_RGBA, GL_UNSIGNED_BYTE, (unsigned char*)image.data());
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	return tex;
+}
 
 
-//Odkomentuj, żeby rysować czajnik
-//float* vertices = myTeapotVertices;
-//float* normals = myTeapotNormals;
-//float* texCoords = myTeapotTexCoords;
-//float* colors = myTeapotColors;
-//int vertexCount = myTeapotVertexCount;
-
-
-
-//Procedura obsługi błędów
 void error_callback(int error, const char* description) {
 	fputs(description, stderr);
 }
@@ -92,7 +102,10 @@ void initOpenGLProgram(GLFWwindow* window) {
 	glfwSetWindowSizeCallback(window,windowResizeCallback);
 	glfwSetKeyCallback(window,keyCallback);
 
-	sp=new ShaderProgram("v_simplest.glsl",NULL,"f_simplest.glsl");
+	sp=new ShaderProgram("v_textured.glsl",NULL,"f_textured.glsl");
+	tex = readTexture("textures/white_king.png");
+
+	loadOBJ("objects/king.obj", vertices, uvs, normals);
 }
 
 
@@ -112,28 +125,41 @@ void drawScene(GLFWwindow* window,float angle_x,float angle_y) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glm::mat4 V=glm::lookAt(
-         glm::vec3(0, 0, -5),
-         glm::vec3(0,0,0),
+         glm::vec3( 0.0f,  0.0f, -5.0f),
+         glm::vec3( 0.0f,  0.0f,  0.0f),
          glm::vec3(0.0f,1.0f,0.0f)); //Wylicz macierz widoku
 
     glm::mat4 P=glm::perspective(50.0f*PI/180.0f, aspectRatio, 0.01f, 50.0f); //Wylicz macierz rzutowania
 
     glm::mat4 M=glm::mat4(1.0f);
-	M=glm::rotate(M,angle_y,glm::vec3(1.0f,0.0f,0.0f)); //Wylicz macierz modelu
-	M=glm::rotate(M,angle_x,glm::vec3(0.0f,1.0f,0.0f)); //Wylicz macierz modelu
+	M=glm::rotate(M,angle_y,glm::vec3(1.0f, 0.0f, 0.0f)); //Wylicz macierz modelu
+	M=glm::rotate(M,angle_x,glm::vec3(0.0f, 1.0f, 0.0f)); //Wylicz macierz modelu
 
     sp->use();//Aktywacja programu cieniującego
     //Przeslij parametry programu cieniującego do karty graficznej
-    glUniformMatrix4fv(sp->u("P"),1,false,glm::value_ptr(P));
-    glUniformMatrix4fv(sp->u("V"),1,false,glm::value_ptr(V));
-    glUniformMatrix4fv(sp->u("M"),1,false,glm::value_ptr(M));
+    glUniformMatrix4fv(sp->u("P"), 1, false, glm::value_ptr(P));
+    glUniformMatrix4fv(sp->u("V"), 1, false, glm::value_ptr(V));
+    glUniformMatrix4fv(sp->u("M"), 1, false, glm::value_ptr(M));
 
-    glEnableVertexAttribArray(sp->a("vertex"));  //Włącz przesyłanie danych do atrybutu vertex
-    glVertexAttribPointer(sp->a("vertex"),4,GL_FLOAT,false,0,vertices); //Wskaż tablicę z danymi dla atrybutu vertex
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, tex);
+	glUniform1i(sp->u("tex"), 0);
 
-    glDrawArrays(GL_TRIANGLES,0,vertexCount); //Narysuj obiekt
+    glEnableVertexAttribArray(sp->a("vertex"));
+    glVertexAttribPointer(sp->a("vertex"), 3, GL_FLOAT, false, 0, &vertices[0]);
+
+	glEnableVertexAttribArray(sp->a("texCoord"));
+	glVertexAttribPointer(sp->a("texCoord"), 2, GL_FLOAT, false, 0, &uvs[0]);
+
+	glEnableVertexAttribArray(sp->a("normal"));
+	glVertexAttribPointer(sp->a("normal"), 3, GL_FLOAT, false, 0, &normals[0]);
+
+
+    glDrawArrays(GL_TRIANGLES, 0, vertices.size()); //Narysuj obiekt
 
     glDisableVertexAttribArray(sp->a("vertex"));  //Wyłącz przesyłanie danych do atrybutu vertex
+	glDisableVertexAttribArray(sp->a("texCoord"));
+	glDisableVertexAttribArray(sp->a("normal"));
 
     glfwSwapBuffers(window); //Przerzuć tylny bufor na przedni
 }

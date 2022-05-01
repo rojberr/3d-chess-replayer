@@ -42,6 +42,9 @@
     <ClInclude Include="glew\include\GL\wglew.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="loadobj.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lodepng.cpp">
@@ -53,6 +56,9 @@
     <ClCompile Include="shaderprogram.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="loadobj.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="f_simplest.glsl">
@@ -61,15 +67,8 @@
     <None Include="v_simplest.glsl">
       <Filter>Pliki zasobów</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Object Include="objects\bishop.obj" />
-    <Object Include="objects\cube.obj" />
-    <Object Include="objects\king.obj" />
-    <Object Include="objects\knight.obj" />
-    <Object Include="objects\pawn.obj" />
-    <Object Include="objects\queen.obj" />
-    <Object Include="objects\rook.obj" />
+    <None Include="f_textured.glsl" />
+    <None Include="v_textured.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\black_bishop.png">

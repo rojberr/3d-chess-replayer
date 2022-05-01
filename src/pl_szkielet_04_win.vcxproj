@@ -24,28 +24,23 @@
     <ClInclude Include="glew\include\GL\glew.h" />
     <ClInclude Include="glew\include\GL\glxew.h" />
     <ClInclude Include="glew\include\GL\wglew.h" />
+    <ClInclude Include="loadobj.h" />
     <ClInclude Include="lodepng.h" />
     <ClInclude Include="myCube.h" />
     <ClInclude Include="myTeapot.h" />
     <ClInclude Include="shaderprogram.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="loadobj.cpp" />
     <ClCompile Include="lodepng.cpp" />
     <ClCompile Include="main_file.cpp" />
     <ClCompile Include="shaderprogram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="f_simplest.glsl" />
+    <None Include="f_textured.glsl" />
     <None Include="v_simplest.glsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Object Include="objects\bishop.obj" />
-    <Object Include="objects\cube.obj" />
-    <Object Include="objects\king.obj" />
-    <Object Include="objects\knight.obj" />
-    <Object Include="objects\pawn.obj" />
-    <Object Include="objects\queen.obj" />
-    <Object Include="objects\rook.obj" />
+    <None Include="v_textured.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\black_bishop.png" />
