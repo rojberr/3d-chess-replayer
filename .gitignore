@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/.vs
+/src/Debug
+/src/.vs/pl_szkielet_04_win/v16

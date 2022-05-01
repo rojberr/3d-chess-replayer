@@ -30,6 +30,18 @@
     <ClInclude Include="myTeapot.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="glew\include\GL\eglew.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="glew\include\GL\glew.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="glew\include\GL\glxew.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="glew\include\GL\wglew.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lodepng.cpp">
@@ -49,5 +61,52 @@
     <None Include="v_simplest.glsl">
       <Filter>Pliki zasobów</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="objects\bishop.obj" />
+    <Object Include="objects\cube.obj" />
+    <Object Include="objects\king.obj" />
+    <Object Include="objects\knight.obj" />
+    <Object Include="objects\pawn.obj" />
+    <Object Include="objects\queen.obj" />
+    <Object Include="objects\rook.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\black_bishop.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\black_king.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\black_knight.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\black_pawn.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\black_queen.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\black_rook.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\white_bishop.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\white_king.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\white_knight.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\white_pawn.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\white_queen.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\white_rook.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
   </ItemGroup>
 </Project>

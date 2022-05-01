@@ -20,6 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
+    <ClInclude Include="glew\include\GL\eglew.h" />
+    <ClInclude Include="glew\include\GL\glew.h" />
+    <ClInclude Include="glew\include\GL\glxew.h" />
+    <ClInclude Include="glew\include\GL\wglew.h" />
     <ClInclude Include="lodepng.h" />
     <ClInclude Include="myCube.h" />
     <ClInclude Include="myTeapot.h" />
@@ -33,6 +37,29 @@
   <ItemGroup>
     <None Include="f_simplest.glsl" />
     <None Include="v_simplest.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="objects\bishop.obj" />
+    <Object Include="objects\cube.obj" />
+    <Object Include="objects\king.obj" />
+    <Object Include="objects\knight.obj" />
+    <Object Include="objects\pawn.obj" />
+    <Object Include="objects\queen.obj" />
+    <Object Include="objects\rook.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\black_bishop.png" />
+    <Image Include="textures\black_king.png" />
+    <Image Include="textures\black_knight.png" />
+    <Image Include="textures\black_pawn.png" />
+    <Image Include="textures\black_queen.png" />
+    <Image Include="textures\black_rook.png" />
+    <Image Include="textures\white_bishop.png" />
+    <Image Include="textures\white_king.png" />
+    <Image Include="textures\white_knight.png" />
+    <Image Include="textures\white_pawn.png" />
+    <Image Include="textures\white_queen.png" />
+    <Image Include="textures\white_rook.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
