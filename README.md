@@ -13,6 +13,8 @@ The easiest way:
 2) Upload your favourite game in [chess notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess)). Default one is the best play from [Magnus Carlsen](https://en.wikipedia.org/wiki/Magnus_Carlsen) ever!
 3) Watch and enjoy!
 
+![Chess gif presentation](chess.gif)
+
 ## Authors & Contributors
 
 rojberr & Digit16
