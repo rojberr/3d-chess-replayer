@@ -24,12 +24,6 @@
     <ClInclude Include="shaderprogram.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="myCube.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="myTeapot.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="glew\include\GL\eglew.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
@@ -59,16 +53,17 @@
     <ClCompile Include="loadobj.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="load_game.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="f_simplest.glsl">
-      <Filter>Pliki zasobów</Filter>
-    </None>
-    <None Include="v_simplest.glsl">
-      <Filter>Pliki zasobów</Filter>
-    </None>
-    <None Include="f_textured.glsl" />
-    <None Include="v_textured.glsl" />
+    <None Include="v_shiny.glsl" />
+    <None Include="f_shiny.glsl" />
+    <None Include="v_shiny2.glsl" />
+    <None Include="f_shiny2.glsl" />
+    <None Include="f_2d.glsl" />
+    <None Include="v_2d.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\black_bishop.png">
@@ -105,6 +100,12 @@
       <Filter>Pliki zasobów</Filter>
     </Image>
     <Image Include="textures\white_rook.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\logo.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="textures\board_low.png">
       <Filter>Pliki zasobów</Filter>
     </Image>
   </ItemGroup>

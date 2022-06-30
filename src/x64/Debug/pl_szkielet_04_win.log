@@ -1,0 +1,18 @@
+﻿  loadobj.cpp
+  lodepng.cpp
+C:\Users\student\source\repos\3d-chess-replayer\src\loadobj.cpp(2,10): error C1083:  Nie można otworzyć pliku dołącz: 'glm/glm.hpp': No such file or directory
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(762,34): warning C4334:  "<<": wynik 32-bitowe przesunięcia niejawnie skonwertowano do 64 bitów (czy 64-bitowe przesunięcie było zamierzone?)
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(1422,29): warning C4267:  "=": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(1426,31): warning C4267:  "=": konwersja z "size_t" do "int", możliwa utrata danych
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(1498,86): warning C4267:  "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(3441,46): warning C4334:  "<<": wynik 32-bitowe przesunięcia niejawnie skonwertowano do 64 bitów (czy 64-bitowe przesunięcie było zamierzone?)
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(3455,54): warning C4267:  "argument": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(4262,75): warning C4267:  "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(4310,41): warning C4267:  "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(4390,59): warning C4267:  "=": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+  main_file.cpp
+C:\Users\student\source\repos\3d-chess-replayer\src\lodepng.cpp(5329,38): warning C4267:  "inicjowanie": konwersja z "size_t" do "unsigned int", możliwa utrata danych
+  shaderprogram.cpp
+C:\Users\student\source\repos\3d-chess-replayer\src\main_file.cpp(23,10): error C1083:  Nie można otworzyć pliku dołącz: 'GL/glew.h': No such file or directory
+  Generowanie kodu...
+C:\Users\student\source\repos\3d-chess-replayer\src\shaderprogram.h(25,10): error C1083:  Nie można otworzyć pliku dołącz: 'GL/glew.h': No such file or directory

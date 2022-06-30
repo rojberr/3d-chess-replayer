@@ -62,8 +62,5 @@ bool loadOBJ(const std::string path, std::vector<glm::vec3>& out_vertices, std::
     for (unsigned int i = 0; i < normalIndices.size(); i++) {
         out_normals.push_back(temp_normals[normalIndices[i] - 1]);
     }
-
-
-
     return true;
 }
