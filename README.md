@@ -1,6 +1,6 @@
 # 3d-chess-replayer
 
-Upload your favourite chess play in chess notation and admire it in 3d!
+Upload your favourite chess play in chess notation and admire it in 3D!
 
 This program visualizes chess games in 3D! Upload a game in portable game notation and press play.
 
@@ -13,7 +13,7 @@ The easiest way:
 2) Upload your favourite game in [chess notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess)). Default one is the best play from [Magnus Carlsen](https://en.wikipedia.org/wiki/Magnus_Carlsen) ever!
 3) Watch and enjoy!
 
-![Chess gif presentation](chess.gif)
+![Chess gif presentation](animation.gif)
 
 ## Authors & Contributors
 
