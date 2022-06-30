@@ -6,11 +6,11 @@ This program visualizes chess games in 3D! Upload a game in portable game notati
 
 ![https://www.pexels.com/photo/men-playing-chess-6202990/](readme-photo.jpg)
 
-## How to install and upload a game notation
+## How to install and upload chosen game to watch
 
 The easiest way:
 1) Download Visual Studio >2019 and open the Visual Studio file from `/src`. By doing that all libraries will be uploaded and prepared for you upfront.
-2) Upload your favourite game in [chess notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess)). Default one is the best play from [Magnus Carlsen](https://en.wikipedia.org/wiki/Magnus_Carlsen) ever!
+2) Upload your favourite game saved in [chess notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess)). The default one playing (in case you won't upload your own) is one of the bests plays from [Magnus Carlsen](https://en.wikipedia.org/wiki/Magnus_Carlsen) ever!
 3) Watch and enjoy!
 
 ![Chess gif presentation](animation.gif)
